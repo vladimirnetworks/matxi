@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  </head>
+  <body>
+    <canvas id="canvas" style="border: 1px solid red; direction: rtl"></canvas>
+
+    <script>
+      let canvas = document.querySelector('canvas');
+      canvas.width = 300;
+      canvas.height = 300;
+      let ctx = canvas.getContext('2d');
+
+      for (var i = 0; i <= 360; i++) {
+        var radian = i * (Math.PI / 180);
+
+        y = 100 + Math.sin(radian) * 20;
+        x = 100 + Math.cos(radian) * 20;
+
+        y2 = 100 + Math.sin(radian) * 100;
+        x2 = 100 + Math.cos(radian) * 100;
+
+     
+
+        if (i % 20 == 0) {
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
+        }
+      }
+    </script>
+  </body>
+</html>
